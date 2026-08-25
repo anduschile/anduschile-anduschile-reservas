@@ -5,6 +5,9 @@ import Incluye from './components/Incluye'
 import Precio from './components/Precio'
 import Referencia from './components/Referencia'
 import Formulario from './components/Formulario'
+import Footer from './components/Footer'
+import WhatsAppButton from './components/WhatsAppButton'
+import BackToTop from './components/BackToTop'
 
 function App() {
     return (
@@ -19,6 +22,11 @@ function App() {
                 <Referencia />
                 <Formulario />
             </main>
+
+            <Footer />
+
+            <WhatsAppButton />
+            <BackToTop />
         </>
     )
 }

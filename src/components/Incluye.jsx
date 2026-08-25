@@ -9,6 +9,8 @@ import {
     GraduationCap,
     Headphones
 } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { fadeInUp, viewportOnce } from '../animations'
 import styles from './Incluye.module.css'
 
 const modulos = [
@@ -27,24 +29,31 @@ function Incluye() {
     return (
         <section id="incluye" className="section">
             <div className="container">
-                <h2 className={styles.title}>Qué incluye el sistema</h2>
+                <motion.div
+                    variants={fadeInUp}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={viewportOnce}
+                >
+                    <h2 className={styles.title}>Qué incluye el sistema</h2>
 
-                <div className={styles.grid}>
-                    {modulos.map(modulo => {
-                        const Icono = modulo.icono
-                        return (
-                            <div key={modulo.texto} className={styles.modulo}>
-                                <Icono
-                                    size={28}
-                                    strokeWidth={1.75}
-                                    className={styles.icono}
-                                    aria-hidden="true"
-                                />
-                                <span className={styles.texto}>{modulo.texto}</span>
-                            </div>
-                        )
-                    })}
-                </div>
+                    <div className={styles.grid}>
+                        {modulos.map(modulo => {
+                            const Icono = modulo.icono
+                            return (
+                                <div key={modulo.texto} className={styles.modulo}>
+                                    <Icono
+                                        size={28}
+                                        strokeWidth={1.75}
+                                        className={styles.icono}
+                                        aria-hidden="true"
+                                    />
+                                    <span className={styles.texto}>{modulo.texto}</span>
+                                </div>
+                            )
+                        })}
+                    </div>
+                </motion.div>
             </div>
 
             <div className={styles.banner}>

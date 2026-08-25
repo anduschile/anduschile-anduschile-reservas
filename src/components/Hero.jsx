@@ -1,25 +1,32 @@
 import { CheckCircle } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { fadeInUp, staggerContainer } from '../animations'
 import styles from './Hero.module.css'
 
 function Hero() {
     return (
         <section id="inicio" className={styles.hero}>
-            <div className={styles.textCol}>
+            <motion.div
+                className={styles.textCol}
+                variants={staggerContainer}
+                initial="hidden"
+                animate="show"
+            >
                 <span className={styles.eyebrow}>
                     Sistema de gestión para alojamientos turísticos
                 </span>
 
-                <h1 className={styles.headline}>
+                <motion.h1 variants={fadeInUp} className={styles.headline}>
                     ¿Sigues gestionando las reservas de tu alojamiento
                     con WhatsApp y planilla?
-                </h1>
+                </motion.h1>
 
-                <p className={styles.subheadline}>
+                <motion.p variants={fadeInUp} className={styles.subheadline}>
                     AndusChile te da un sistema propio en 5 días.
                     Sin doble reserva. Sin depender de que estés tú presente.
-                </p>
+                </motion.p>
 
-                <div className={styles.actions}>
+                <motion.div variants={fadeInUp} className={styles.actions}>
                     <a href="#formulario" className="btn btn--primary">
                         Quiero una demo gratuita
                     </a>
@@ -27,8 +34,8 @@ function Hero() {
                         <CheckCircle size={18} strokeWidth={2} className={styles.microcopyIcon} aria-hidden="true" />
                         Implementación en 5 días · Sin contrato mínimo
                     </span>
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
 
             <div className={styles.imageCol} />
         </section>

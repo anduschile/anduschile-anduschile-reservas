@@ -1,0 +1,45 @@
+.footer {
+    background: var(--color-bg-dark);
+    border-top: 1px solid var(--color-border-dark);
+    padding: var(--space-8) 0;
+}
+
+.inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+}
+
+.copy {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-inverse-muted);
+}
+
+.contacts {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-6);
+}
+
+.contactLink {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-inverse-muted);
+    transition: color var(--transition-fast);
+}
+
+.contactLink:hover {
+    color: var(--color-text-inverse);
+}
+
+@media (max-width: 768px) {
+    .inner {
+        flex-direction: column;
+        text-align: center;
+    }
+}
